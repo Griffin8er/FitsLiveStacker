@@ -150,6 +150,24 @@ function App() {
     };
   }, []);
 
+  async function saveStackedImage() {
+    try {
+      const response = await fetch(`${API_URL}/stacked-image`);
+      const blob = await response.blob();
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "stacked_image.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      setStatus(`Save image error: ${error.message}`);
+    }
+  };
+
   const current = stackProgress?.current || 0;
   const total = stackProgress?.total || 0;
 
@@ -212,6 +230,16 @@ function App() {
         ) : (
           <p>No stacked image yet.</p>
         )}
+
+        { stackProgress ? (
+          <>
+          {!(stackProgress.watching) && (
+            <button onClick={saveStackedImage} style={{ marginTop: "10px", width: "50%" }}>
+              Save Stacked Image
+            </button>
+          )}
+        </>
+        ) : null }
       </div>
     </div>
   );

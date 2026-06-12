@@ -226,7 +226,7 @@ def start_watch_stack():
     if observer is not None and observer.is_alive():
         return {"success": False, "error": "Already watching"}
 
-    stacker = LiveStacker()
+    stacker = LiveStacker(master_dark="MasterDark_Gain100_180s.tif")
     processed_files = set()
 
     stack_progress = {

@@ -1,6 +1,6 @@
 {
   "name": "fits-live-stacker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "productName": "FitsLiveStacker",
   "main": "electron/main.cjs",
   "private": true,

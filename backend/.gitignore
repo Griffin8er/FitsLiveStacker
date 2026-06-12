@@ -2,3 +2,5 @@ build
 dist
 *.png
 *.spec
+*.tif
+*.pyd

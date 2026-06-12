@@ -57,16 +57,15 @@ Run the provided installer and launch FitsLiveStacker from the Start Menu.
 
 ## Current Version
 
-Version: 1.0.0
+Version: 1.0.1
 
 ## Future Plans
 - Stretch controls
 - Histogram display
-- FITS/TIFF export
 - Frame quality metrics
 - Star count and alignment diagnostics
 - Multi-session stacking
-- Calibration frame support (darks, flats, bias)
+- Calibration frame support (flats, bias)
 
 ## License
 
